@@ -1,20 +1,22 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Dorado-Core-UI
 
-# Run and deploy your AI Studio app
+Dorado-Core-UI is an agentic RAG (Retrieval-Augmented Generation) platform designed to run fully on local hardware. It utilizes CPU-only inference pipelines, making it suitable for resource-constrained environments or privacy-focused deployments where data sovereignty is paramount.
 
-This contains everything you need to run your app locally.
+## Key Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1IcrXAfUAJbG9O3AYi3EhuQK4gcmiGGmu
+- **Local Inference Engine**: Optimized for running quantized open-source models (e.g., Mistral, Phi-3) on CPUs (AVX2 supported).
+- **Agentic Workflow**: Orchestrate multiple LLM agents for planning, analysis, and data synthesis.
+- **RAG Knowledge Base**: Local document ingestion and vector embedding management using persistent stores like ChromaDB.
+- **Resource Monitoring**: Real-time dashboard for tracking CPU usage, RAM consumption, and inference tokens/second.
+- **Python Backend Compatible**: Designed to interface with local Python APIs (FastAPI/Flask) wrapping `llama.cpp` or similar libraries.
 
-## Run Locally
+## Technology Stack
 
-**Prerequisites:**  Node.js
+- **Frontend**: React, TypeScript, Tailwind CSS
+- **Visualization**: Recharts for real-time metrics
+- **Icons**: Lucide React
+- **Architecture**: Component-based UI interfacing with a local REST/WebSocket API.
 
+## Setup
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+This UI expects a local Python backend running on `localhost:8000`. Ensure your local inference server is active before connecting.

@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView }) => {
           <Cpu className="text-slate-900 w-5 h-5" />
         </div>
         <div>
-          <h1 className="font-bold text-slate-100 tracking-tight">NexusLocal</h1>
+          <h1 className="font-bold text-slate-100 tracking-tight">Dorado Core</h1>
           <p className="text-xs text-slate-500">v0.9.4 (CPU-Only)</p>
         </div>
       </div>
