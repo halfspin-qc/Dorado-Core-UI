@@ -1,24 +1,35 @@
-# Dorado-Core-UI
+# Dorado Core
 
-Dorado-Core-UI is an agentic RAG (Retrieval-Augmented Generation) platform designed to run fully on local hardware. It utilizes CPU-only inference pipelines, making it suitable for resource-constrained environments or privacy-focused deployments where data sovereignty is paramount.
+An agentic RAG AI platform core running fully on local hardware and no-GPU but only CPUs, with Python backend, open source.
+
+## UI Preview
 
 ![Dorado Core UI Overview](https://github.com/user-attachments/assets/ca527018-0909-41d3-a447-b8d9c0258169)
 
+## Overview
+
+Dorado Core is a high-performance, agentic RAG (Retrieval-Augmented Generation) platform designed to operate entirely on local hardware. By leveraging CPU-optimized inference pipelines (AVX2/AVX-512), it brings advanced AI capabilities to resource-constrained environments and privacy-centric deployments without requiring expensive GPU infrastructure.
+
 ## Key Features
 
-- **Local Inference Engine**: Optimized for running quantized open-source models (e.g., Mistral, Phi-3) on CPUs (AVX2 supported).
-- **Agentic Workflow**: Orchestrate multiple LLM agents for planning, analysis, and data synthesis.
-- **RAG Knowledge Base**: Local document ingestion and vector embedding management using persistent stores like ChromaDB.
-- **Resource Monitoring**: Real-time dashboard for tracking CPU usage, RAM consumption, and inference tokens/second.
-- **Python Backend Compatible**: Designed to interface with local Python APIs (FastAPI/Flask) wrapping `llama.cpp` or similar libraries.
+- **Agentic Workflow**: Orchestrate multiple LLM agents for planning, data analysis, and synthesis.
+- **CPU-Only Inference**: Optimized for running GGUF/quantized models (e.g., Mistral, Phi-3, Llama 3) purely on system processors.
+- **Real-time Monitoring**: Integrated dashboard for tracking CPU load, RAM pressure, and inference tokens-per-second.
+- **Local Knowledge Base**: Persistent vector storage using ChromaDB with automated document ingestion and chunking.
+- **Extensible Architecture**: Designed to interface seamlessly with Python-based backends (FastAPI/Flask) wrapping `llama.cpp` or `ollama`.
 
 ## Technology Stack
 
-- **Frontend**: React, TypeScript, Tailwind CSS
-- **Visualization**: Recharts for real-time metrics
-- **Icons**: Lucide React
-- **Architecture**: Component-based UI interfacing with a local REST/WebSocket API.
+- **Frontend**: React 19, TypeScript, Tailwind CSS
+- **Visualization**: Recharts for live telemetry data
+- **Iconography**: Lucide React
+- **Backend Compatibility**: Optimized for Python-based local LLM servers
 
-## Setup
+## Getting Started
 
-This UI expects a local Python backend running on `localhost:8000`. Ensure your local inference server is active before connecting.
+1. **Local Backend**: Ensure your Python inference server is running on `http://localhost:8000`.
+2. **Environment**: This UI expects a system with at least 16GB of RAM for optimal performance with 7B parameter models.
+3. **Models**: Place your `.gguf` models in the `./models` directory of your backend for the UI to recognize them.
+
+---
+*Dorado Core: Privacy-first, hardware-agnostic, local-first intelligence.*
