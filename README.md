@@ -5,8 +5,6 @@ An agentic RAG AI platform core running fully on local hardware and no-GPU but o
 ## UI Preview
 
 ![Dorado Core UI Overview](./assets/ui-preview.jpg)
-![Dorado Core UI Overview](./assets/agent_swarm.png)
-
 
 ## Overview
 
