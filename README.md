@@ -2,6 +2,8 @@
 
 Dorado-Core-UI is an agentic RAG (Retrieval-Augmented Generation) platform designed to run fully on local hardware. It utilizes CPU-only inference pipelines, making it suitable for resource-constrained environments or privacy-focused deployments where data sovereignty is paramount.
 
+![Dorado Core UI Overview](https://github.com/user-attachments/assets/ca527018-0909-41d3-a447-b8d9c0258169)
+
 ## Key Features
 
 - **Local Inference Engine**: Optimized for running quantized open-source models (e.g., Mistral, Phi-3) on CPUs (AVX2 supported).
