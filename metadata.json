@@ -1,0 +1,5 @@
+{
+  "name": "Dorado-Core-UI",
+  "description": "A high-performance interface for local, CPU-based Agentic RAG platforms. Designed for resource-constrained environments running Python backends with open-source LLMs.",
+  "requestFramePermissions": []
+}
