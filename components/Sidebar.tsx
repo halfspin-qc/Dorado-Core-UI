@@ -20,7 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView }) => {
     { id: ViewState.DASHBOARD, label: 'Overview', icon: LayoutDashboard },
     { id: ViewState.AGENTS, label: 'Agent Swarm', icon: Bot },
     { id: ViewState.KNOWLEDGE_BASE, label: 'Knowledge Base', icon: Database },
-    { id: ViewState.CHAT, label: 'RAG Playground', icon: MessageSquareCode },
+    { id: ViewState.CHAT, label: 'Dorado Core Playground', icon: MessageSquareCode },
     { id: ViewState.SETTINGS, label: 'Configuration', icon: Settings },
   ];
 

@@ -1,10 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Upload, FileText, CheckCircle, Clock, AlertCircle, RefreshCw, Database } from 'lucide-react';
 import { MOCK_DOCS } from '../services/mockBackend';
 import { DocumentFile } from '../types';
 
 const KnowledgeBase: React.FC = () => {
   const [documents, setDocuments] = useState<DocumentFile[]>(MOCK_DOCS);
+
+  // Simulate file processing progress
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDocuments(prevDocs => 
+        prevDocs.map(doc => {
+          if (doc.status === 'processing') {
+            const currentProgress = doc.progress || 0;
+            // Randomize increment speed
+            const increment = Math.random() * 15; 
+            const newProgress = Math.min(100, currentProgress + increment);
+            
+            if (newProgress >= 100) {
+              return { 
+                ...doc, 
+                status: 'indexed', 
+                progress: 100,
+                // Assign a random chunk count if it was 0 (new file)
+                chunks: doc.chunks === 0 ? Math.floor(Math.random() * 300) + 50 : doc.chunks 
+              };
+            }
+            return { ...doc, progress: newProgress };
+          }
+          return doc;
+        })
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleSimulateIngest = () => {
+    const newFile: DocumentFile = {
+      id: Date.now().toString(),
+      name: `New_Knowledge_Source_${Math.floor(Math.random() * 100)}.pdf`,
+      size: `${(Math.random() * 10 + 0.5).toFixed(1)} MB`,
+      chunks: 0,
+      status: 'processing',
+      uploadDate: new Date().toISOString().split('T')[0],
+      progress: 0
+    };
+    setDocuments(prev => [newFile, ...prev]);
+  };
 
   return (
     <div className="p-8 h-full overflow-y-auto bg-slate-950">
@@ -13,7 +56,10 @@ const KnowledgeBase: React.FC = () => {
           <h2 className="text-3xl font-bold text-slate-100">Knowledge Base</h2>
           <p className="text-slate-400 mt-1">Manage documents and vector embeddings.</p>
         </div>
-        <button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button 
+          onClick={handleSimulateIngest}
+          className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+        >
           <Upload className="w-4 h-4" />
           Ingest Documents
         </button>
@@ -35,7 +81,7 @@ const KnowledgeBase: React.FC = () => {
                   <th className="px-6 py-3">File Name</th>
                   <th className="px-6 py-3">Size</th>
                   <th className="px-6 py-3">Chunks</th>
-                  <th className="px-6 py-3">Status</th>
+                  <th className="px-6 py-3 w-1/3">Status</th>
                   <th className="px-6 py-3">Actions</th>
                 </tr>
               </thead>
@@ -51,12 +97,27 @@ const KnowledgeBase: React.FC = () => {
                     <td className="px-6 py-4">
                       {doc.status === 'indexed' && (
                         <div className="flex items-center gap-1.5 text-emerald-400">
-                          <CheckCircle className="w-3.5 h-3.5" /> Indexed
+                          <CheckCircle className="w-3.5 h-3.5" /> 
+                          <span>Indexed</span>
                         </div>
                       )}
                       {doc.status === 'processing' && (
-                        <div className="flex items-center gap-1.5 text-blue-400">
-                          <RefreshCw className="w-3.5 h-3.5 animate-spin" /> Processing
+                        <div className="w-full max-w-[200px]">
+                          <div className="flex justify-between items-center mb-1.5">
+                            <div className="flex items-center gap-1.5 text-blue-400 text-xs font-medium">
+                              <RefreshCw className="w-3 h-3 animate-spin" /> 
+                              Processing
+                            </div>
+                            <span className="text-xs text-blue-400 font-mono">
+                              {Math.round(doc.progress || 0)}%
+                            </span>
+                          </div>
+                          <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                            <div 
+                              className="h-full bg-blue-500 transition-all duration-300 ease-out"
+                              style={{ width: `${doc.progress || 0}%` }}
+                            />
+                          </div>
                         </div>
                       )}
                       {doc.status === 'error' && (

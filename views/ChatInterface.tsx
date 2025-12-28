@@ -65,7 +65,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ isProcessing, setIsProces
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
           <div>
-            <h2 className="font-semibold text-slate-100">RAG Playground</h2>
+            <h2 className="font-semibold text-slate-100">Dorado Core Playground</h2>
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <span className="bg-slate-800 px-1.5 py-0.5 rounded text-emerald-400 border border-slate-700">Mistral-7B-Quantized</span>
               <span>temp: 0.7</span>

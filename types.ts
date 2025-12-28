@@ -22,6 +22,12 @@ export interface AgentConfig {
   role: string;
   status: 'idle' | 'loading' | 'inference';
   contextWindow: number;
+  systemPrompt?: string;
+  parameters?: {
+    temperature: number;
+    topP: number;
+    topK: number;
+  };
 }
 
 export interface DocumentFile {
@@ -31,6 +37,7 @@ export interface DocumentFile {
   chunks: number;
   status: 'indexed' | 'processing' | 'error';
   uploadDate: string;
+  progress?: number;
 }
 
 export interface ChatMessage {
