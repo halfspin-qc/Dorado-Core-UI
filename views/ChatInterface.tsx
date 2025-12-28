@@ -59,7 +59,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ isProcessing, setIsProces
   };
 
   return (
-    <div className="h-full flex flex-col bg-slate-950">
+    <div className="h-full flex flex-col bg-slate-950 font-space-grotesk">
       {/* Header */}
       <header className="px-6 py-4 border-b border-slate-800 bg-slate-900/50 flex justify-between items-center">
         <div className="flex items-center gap-3">

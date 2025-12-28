@@ -127,7 +127,7 @@ const AgentLab: React.FC = () => {
   };
 
   return (
-    <div className="p-8 h-full overflow-y-auto bg-slate-950 relative">
+    <div className="p-8 h-full overflow-y-auto bg-slate-950 relative font-space-grotesk">
        <header className="mb-8">
         <h2 className="text-3xl font-bold text-slate-100">Agent Swarm</h2>
         <p className="text-slate-400 mt-1">Configure local LLMs and agent roles.</p>

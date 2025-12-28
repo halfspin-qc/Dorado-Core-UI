@@ -53,7 +53,7 @@ const App: React.FC = () => {
         return <AgentLab />;
       case ViewState.SETTINGS:
         return (
-          <div className="p-8 text-slate-400 flex items-center justify-center h-full">
+          <div className="p-8 text-slate-400 flex items-center justify-center h-full font-space-grotesk">
             <div className="text-center">
               <h2 className="text-xl font-bold text-slate-200">Settings</h2>
               <p>Configuration for Python backend (Host, Port, API Keys) goes here.</p>
@@ -66,7 +66,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen w-full bg-slate-950 text-slate-200 overflow-hidden font-sans">
+    <div className="flex h-screen w-full bg-slate-950 text-slate-200 overflow-hidden font-space-grotesk">
       <Sidebar currentView={currentView} setView={setCurrentView} />
       <main className="flex-1 h-full relative">
         {renderContent()}

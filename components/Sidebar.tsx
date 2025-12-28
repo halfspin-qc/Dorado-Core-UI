@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView }) => {
   ];
 
   return (
-    <div className="w-64 h-screen bg-slate-900 border-r border-slate-800 flex flex-col flex-shrink-0">
+    <div className="w-64 h-screen bg-slate-900 border-r border-slate-800 flex flex-col flex-shrink-0 font-space-grotesk">
       <div className="p-6 flex items-center gap-3 border-b border-slate-800">
         <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20">
           <Cpu className="text-slate-900 w-5 h-5" />

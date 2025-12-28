@@ -50,7 +50,7 @@ const KnowledgeBase: React.FC = () => {
   };
 
   return (
-    <div className="p-8 h-full overflow-y-auto bg-slate-950">
+    <div className="p-8 h-full overflow-y-auto bg-slate-950 font-space-grotesk">
       <header className="flex justify-between items-center mb-8">
         <div>
           <h2 className="text-3xl font-bold text-slate-100">Knowledge Base</h2>

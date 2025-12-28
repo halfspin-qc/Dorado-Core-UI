@@ -12,9 +12,9 @@ const Dashboard: React.FC<DashboardProps> = ({ metrics }) => {
   const ramPercent = (metrics.ramUsage / 16) * 100; // Assuming 16GB limit
 
   return (
-    <div className="p-8 h-full overflow-y-auto bg-slate-950">
+    <div className="p-8 h-full overflow-y-auto bg-slate-950 font-space-grotesk">
       <header className="mb-8">
-        <h2 className="text-3xl font-bold text-slate-100">System Overview</h2>
+        <h2 className="text-3xl font-bold text-slate-100 tracking-tight">System Overview</h2>
         <p className="text-slate-400 mt-1">Real-time resource monitoring for Local RAG pipeline.</p>
       </header>
 
@@ -32,7 +32,7 @@ const Dashboard: React.FC<DashboardProps> = ({ metrics }) => {
           <div className="flex justify-between items-start mb-4">
             <div>
               <p className="text-slate-400 text-sm font-medium">CPU Load</p>
-              <h3 className="text-2xl font-bold text-slate-100 mt-1">
+              <h3 className="text-2xl font-bold text-slate-100 mt-1 tabular-nums">
                 {metrics.cpuUsage[metrics.cpuUsage.length - 1]?.toFixed(1)}%
               </h3>
             </div>
@@ -52,7 +52,7 @@ const Dashboard: React.FC<DashboardProps> = ({ metrics }) => {
           <div className="flex justify-between items-start mb-4">
             <div>
               <p className="text-slate-400 text-sm font-medium">RAM Usage</p>
-              <h3 className="text-2xl font-bold text-slate-100 mt-1">
+              <h3 className="text-2xl font-bold text-slate-100 mt-1 tabular-nums">
                 {metrics.ramUsage.toFixed(1)} <span className="text-base font-normal text-slate-500">/ 16 GB</span>
               </h3>
             </div>
@@ -72,7 +72,7 @@ const Dashboard: React.FC<DashboardProps> = ({ metrics }) => {
           <div className="flex justify-between items-start mb-4">
             <div>
               <p className="text-slate-400 text-sm font-medium">Inference Speed</p>
-              <h3 className="text-2xl font-bold text-slate-100 mt-1">
+              <h3 className="text-2xl font-bold text-slate-100 mt-1 tabular-nums">
                 {metrics.inferenceSpeed > 0 ? metrics.inferenceSpeed.toFixed(1) : '--'} <span className="text-base font-normal text-slate-500">t/s</span>
               </h3>
             </div>
@@ -87,7 +87,7 @@ const Dashboard: React.FC<DashboardProps> = ({ metrics }) => {
           <div className="flex justify-between items-start mb-4">
             <div>
               <p className="text-slate-400 text-sm font-medium">Vector Store</p>
-              <h3 className="text-2xl font-bold text-slate-100 mt-1">
+              <h3 className="text-2xl font-bold text-slate-100 mt-1 tabular-nums">
                 14,205 <span className="text-base font-normal text-slate-500">chunks</span>
               </h3>
             </div>
@@ -114,9 +114,9 @@ const Dashboard: React.FC<DashboardProps> = ({ metrics }) => {
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
                 <XAxis dataKey="time" hide />
-                <YAxis domain={[0, 100]} stroke="#64748b" tickFormatter={(v) => `${v}%`} />
+                <YAxis domain={[0, 100]} stroke="#64748b" tickFormatter={(v) => `${v}%`} className="text-xs" />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#e2e8f0' }}
+                  contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#e2e8f0', borderRadius: '8px', fontFamily: 'Space Grotesk' }}
                   itemStyle={{ color: '#60a5fa' }}
                 />
                 <Area 
