@@ -6,8 +6,6 @@ An agentic RAG AI platform core running fully on local hardware and no-GPU but o
 
 ![Dorado Core UI Overview](./assets/ui-preview.jpg)
 
-![Agent Swarm](./assets/agent_swarm.jpg)
-
 ## Overview
 
 Dorado Core is a high-performance, agentic RAG (Retrieval-Augmented Generation) platform designed to operate entirely on local hardware. By leveraging CPU-optimized inference pipelines (AVX2/AVX-512), it brings advanced AI capabilities to resource-constrained environments and privacy-centric deployments without requiring expensive GPU infrastructure.
