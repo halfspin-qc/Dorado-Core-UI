@@ -5,6 +5,8 @@ An agentic RAG AI platform core running fully on local hardware and no-GPU but o
 ## UI Preview
 
 ![Dorado Core UI Overview](./assets/ui-preview.jpg)
+https://ai.studio/apps/drive/1IcrXAfUAJbG9O3AYi3EhuQK4gcmiGGmu
+
 
 ## Overview
 
